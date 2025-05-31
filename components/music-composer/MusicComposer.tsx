@@ -254,9 +254,8 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
     }
 
     return (
-      <div className="h-full flex flex-col overflow-hidden">
-        <div className="flex-1 overflow-y-auto flex items-center justify-center p-1">
-          <div className="w-full max-w-2xl mx-auto p-4 space-y-6">
+      <div className="h-full overflow-y-auto sm:overflow-hidden sm:flex sm:items-center sm:justify-center p-3 sm:p-4">
+        <div className="w-full max-w-2xl space-y-3 sm:space-y-4 my-4 sm:my-0">
           <audio
             ref={audioRef}
             src="/coldplay-x-y-changing-faces.mp3"
@@ -267,11 +266,11 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
           
           <div className="text-center">
             <Icon
-              className="text-white mb-3"
+              className="text-white mb-2"
               icon="mdi:music-note"
-              width={32}
+              width={28}
             />
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">
               {generatedMusic.title}
             </h3>
             <p className="text-xs sm:text-sm text-white/60">
@@ -279,7 +278,7 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
             </p>
           </div>
 
-          <div className="relative h-28 sm:h-32">
+          <div className="relative h-32 sm:h-28 py-2 sm:py-0">
             <SimpleAudioVisualizer
               audioElement={audioRef.current || undefined}
               isPlaying={isPlaying}
@@ -334,7 +333,16 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
 
           <div className="flex gap-3 justify-center">
             <Button
-              className="bg-white/10 text-white data-[hover=true]:bg-white/20"
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 sm:hidden"
+              isIconOnly
+              radius="full"
+              size="md"
+              variant="flat"
+            >
+              <Icon icon="mdi:download" width={20} />
+            </Button>
+            <Button
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 hidden sm:flex"
               radius="full"
               startContent={<Icon icon="mdi:download" width={18} />}
               variant="flat"
@@ -342,7 +350,16 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
               Download
             </Button>
             <Button
-              className="bg-white/10 text-white data-[hover=true]:bg-white/20"
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 sm:hidden"
+              isIconOnly
+              radius="full"
+              size="md"
+              variant="flat"
+            >
+              <Icon icon="mdi:share-variant" width={20} />
+            </Button>
+            <Button
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 hidden sm:flex"
               radius="full"
               startContent={<Icon icon="mdi:share-variant" width={18} />}
               variant="flat"
@@ -350,7 +367,26 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
               Share
             </Button>
             <Button
-              className="bg-white/10 text-white data-[hover=true]:bg-white/20"
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 sm:hidden"
+              isIconOnly
+              radius="full"
+              size="md"
+              variant="flat"
+              onPress={() => {
+                setGeneratedMusic(null);
+                setSelection({
+                  genre: "",
+                  mood: "",
+                  tempo: 90,
+                  instruments: [],
+                  duration: "1min",
+                });
+              }}
+            >
+              <Icon icon="mdi:refresh" width={20} />
+            </Button>
+            <Button
+              className="bg-white/10 text-white data-[hover=true]:bg-white/20 hidden sm:flex"
               radius="full"
               startContent={<Icon icon="mdi:refresh" width={18} />}
               variant="flat"
@@ -367,7 +403,6 @@ export function MusicComposer({ isExpanded = false }: MusicComposerProps) {
             >
               New Track
             </Button>
-          </div>
           </div>
         </div>
       </div>
