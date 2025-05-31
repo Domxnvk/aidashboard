@@ -2,7 +2,7 @@
 
 An innovative AI-powered interface template built for the HeroUI Hackathon with the theme "AI-Powered Interfaces: Templates leveraging AI capabilities". This project showcases a modern, interactive dashboard where users can drag and drop various AI widgets into a customizable playground.
 
-![Playground Link](https://aiplayground.acmdom.dev/)
+🔗 **[Live Demo: https://aiplayground.acmdom.dev/](https://aiplayground.acmdom.dev/)**
 
 ## 🏆 Hackathon Theme
 
