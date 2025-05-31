@@ -1,0 +1,1 @@
+export { MusicComposer } from "./MusicComposer";

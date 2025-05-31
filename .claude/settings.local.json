@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(mkdir:*)",
+      "Bash(sed:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm run lint:*)",
+      "Bash(rm:*)",
+      "Bash(true)"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": false
+}
